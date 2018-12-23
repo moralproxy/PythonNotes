@@ -1,0 +1,4 @@
+s ='abcde'
+x = s[:-1]
+print(x)
+'''Result : 'abcd' '''
