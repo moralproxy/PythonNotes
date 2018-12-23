@@ -1,0 +1,5 @@
+lesbo = {'ass':'1'}
+def pidor(**param):
+    print(param)
+pidor(**lesbo) # in python 3.6+ to pass the dict in argument, you have to put '**' in front of passing argument too
+#Rsult : {'ass': '1'}
