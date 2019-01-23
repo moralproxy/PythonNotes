@@ -1,0 +1,3 @@
+text = '  girls %s to %s' % ('loves','suck')
+print(text)
+#result: girls like to suck
