@@ -1,0 +1,28 @@
+#Start/Stop thread via pushing spacebar
+import threading
+import time
+from msvcrt import getch
+
+#Source class for thread
+class myThread(threading.Thread):
+    def __init__(self,name,switch):
+        threading.Thread.__init__(self)
+        self.switch = switch
+        self.name = name
+ 
+    def run(self):
+        while self.switch == True:
+            print('thread running, threads:', threading.enumerate())
+            time.sleep(1)
+ #switcher
+while True:
+       key = getch()
+       if key == b' ' and 'work' not in str(threading.enumerate()) :
+           print('switching on, threads:',threading.active_count())
+           thread = myThread('work', True)
+           thread.start()
+ 
+       elif  key == b' ' and 'work' in str(threading.enumerate()):
+           thread.switch = False
+           thread.join()
+           print('swithed off, threads:', threading.enumerate())
