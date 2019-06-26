@@ -1,0 +1,30 @@
+import threading
+import time
+import random
+switch = False
+from msvcrt import getch
+ 
+#create thread function
+def nt():
+    def worker():
+        global switch
+        while switch ==True:
+          x = random.randint(1, 10)
+          b = random.randint(1, 10)
+          ass = x + b
+          print(ass)
+          #check thread not encreasing
+          print('worker status check',threading.enumerate())
+          time.sleep(1)
+ 
+    thread = threading.Thread(target=worker)
+    return thread.start()
+#wat for push spacebar
+while True:
+       key = getch()
+       #switcher
+       if key == b' 'and switch == False:
+          switch = True
+          nt()
+       elif  key == b' 'and switch == True:
+           switch = False
