@@ -1,0 +1,12 @@
+import json
+pzd = [5,5 ]
+
+data = json.load(open('price.json'))
+data['1'] = pzd
+print(data)
+
+
+with open('price.json','w') as ps:
+     json.dump(data,ps)
+
+
