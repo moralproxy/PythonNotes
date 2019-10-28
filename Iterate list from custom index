@@ -1,0 +1,3 @@
+ass =[1,2,3]
+for z in range(1,len(ass)):
+    print(ass[z])
