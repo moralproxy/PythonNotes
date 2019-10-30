@@ -1,0 +1,6 @@
+from operator import add
+a=[1,1]
+b = [2,2]
+x= list(map(add,a,b))
+print(x)
+[3,3]
